@@ -2,14 +2,14 @@ define([], function(){
 
 	var Tips = (function(){
 
-		var $jumpLink = $(".half-header-menu");
+		var $tipBox = $(".tips-box");
 
 		return {
 			show: function(){
-				$jumpLink.removeClass("hide");
+				$tipBox.removeClass("hide");
 			},
 			hide: function(){
-				$jumpLink.addClass("hide");
+				$tipBox.addClass("hide");
 			},
 			init: function(){
 				
@@ -57,7 +57,7 @@ define([], function(){
 		var isEnterBtn = false;
 		var isEnterTips = false;
 
-		$(".half-header-menu").bind("mouseenter", function(){
+		$(".icon").bind("mouseenter", function(){
 			isEnterBtn = true;
 			Tips.show();
 		}).bind("mouseleave", function(){
@@ -69,7 +69,7 @@ define([], function(){
 			}, 100);
 		});
 
-		$(".half-header-menu").bind("mouseenter", function(){
+		$(".tips-box").bind("mouseenter", function(){
 			isEnterTips = true;
 			Tips.show();
 		}).bind("mouseleave", function(){
@@ -81,7 +81,7 @@ define([], function(){
 			}, 100);
 		});
 
-		$(".half-header-menu a").bind("click", function(){
+		$(".tips-inner li").bind("click", function(){
 			var idx = $(this).index();
 			slide(idx);
 			Tips.hide();
